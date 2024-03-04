@@ -8,7 +8,7 @@
     "start": "node server.js",
     "unique": "use strict",
     "debug": "ndb server.js",
-    "dev": "NODE_ENV=devlopment nodemon server.js",
+    "dev": "NODE_ENV=development nodemon server.js",
     "watch:js": "parcel watch ./public/js/index.js --out-dir ./public/js  --out-file bundle.js",
     "build:js": "parcel build ./public/js/index.js --out-dir ./public/js  --out-file bundle.js"
   },
