@@ -12,7 +12,8 @@ const Booking=require('../models/bookingModel');
    
     res.status(200).render('overview',{
       title:'All Tours',
-     tours
+     tours,
+     path:'/views/overview'
     })
   });
   exports.getTour=catchAsync(async(req, res,next) => {
