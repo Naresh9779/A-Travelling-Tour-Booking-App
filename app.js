@@ -4,6 +4,7 @@ const app=express();
 const morgan = require('morgan');
 const AppError=require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
+const compression=require('compression');
 
 const tourRouter=require('./routes/tourRoutes');
 const userRouter=require('./routes/userRoutes');
@@ -47,9 +48,10 @@ app.use(hpp({
 'ratingsQuantity']
 
 }))
+app.use(compression());
 app.use(cookieParser());
 // Check environment
-console.log(process.env.NODE_ENV);
+// console.log(process.env.NODE_ENV);
 if (process.env.NODE_ENV === 'development') {
     app.use(morgan('dev'));
   }
