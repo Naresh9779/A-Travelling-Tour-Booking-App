@@ -1,0 +1,5 @@
+{
+    "vercel": "^33.5.3",
+    "builds":[{"src":"./server.js","use":"@vercel/node"}],
+    "routes":[{"src":"/(.*)","dest":"/"}]
+}
