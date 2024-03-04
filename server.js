@@ -54,5 +54,16 @@ process.on('uncaughtException',err=>{
 
 });
 
+process.on('SIGTERM',err=>{
+
+    console.log('********Sigterm Found Shutting down *********');
+    console.log(err.name,err.message);
+    server.close(()=>{
+        console.log('🔥🔥🔥 Closing..')
+    })
+
+
+})
+
 
 
