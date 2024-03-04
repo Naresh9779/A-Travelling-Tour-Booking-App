@@ -49,7 +49,7 @@ const errorProd = (err, res,req) => {
         {
 
         if (err.isOperational) {
-               return res.status(err.statusCode).json({
+               return res.status(500).json({
                         status: err.status,
                         message: err.message
 
