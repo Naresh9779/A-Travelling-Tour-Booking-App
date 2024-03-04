@@ -28,7 +28,7 @@ const errorDev = (err, res,req) => {
         //API error
     if(req.originalUrl.startsWith('/api'))
         {  
-                return res.status(err.statusCode).json({
+                return res.status(500).json({
                 status: err.status,
                 error: err,
                 stack: err.stack,
@@ -38,7 +38,7 @@ const errorDev = (err, res,req) => {
         });}
         //REnder error
           console.log('Error 🔥🔥',err)
-        return res.status(err.statusCode).render('error',{
+        return res.status(500).render('error',{
                 title:'Something went wrong',
                 msg:err.message
         })
@@ -67,7 +67,7 @@ const errorProd = (err, res,req) => {
 else
 {
         if (err.isOperational) {
-                return res.status(err.statusCode).render('error',{
+                return res.status(500).render('error',{
                         title: 'Error',
                         msg: err.message
  
@@ -75,7 +75,7 @@ else
                  });
          }
          console.log('Error 🔥🔥',err);
-                return res.status(statusCode).render('error',{
+                return res.status(500).render('error',{
                         title: 'Error',
                         msg: err.message
                  });
