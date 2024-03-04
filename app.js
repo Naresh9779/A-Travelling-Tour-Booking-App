@@ -23,11 +23,14 @@ const cookieParser = require('cookie-parser');
 const dotenv=require('dotenv');
 
 dotenv.config({path:'./config.env'});
+app.use(express.static(path.join(process.cwd(), 'public')));
 
 app.set('view engine', 'pug');
+
+
 app.set('views',path.join('views'));
 
-app.use(express.static(path.join(__dirname, 'public')));
+
 
 // Middleware
 
