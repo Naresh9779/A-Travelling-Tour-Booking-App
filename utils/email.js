@@ -51,11 +51,13 @@ module.exports=class email{
       
     }
     async send(template,subject){
-        const html= pug.renderFile(`${__dirname}/../views/email/${template}.pug`,{
-            firstName:this.firstName,
-            url:this.url,
+        const html = pug.renderFile(path.join(__dirname, '..', 'views', 'email', `${template}.pug`), {
+            firstName: this.firstName,
+            url: this.url,
             subject
         });
+        
+       
      const   mailOptions={
             from:this.from,
             to :this.to,
