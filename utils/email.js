@@ -1,6 +1,7 @@
 const nodemailer = require('nodemailer');
 const pug= require('pug');
 const { htmlToText } = require('html-to-text');
+const path=require('path');
 const {google}= require('googleapis');
 
 
